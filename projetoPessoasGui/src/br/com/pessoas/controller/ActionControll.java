@@ -21,6 +21,7 @@ import br.com.pessoas.util.UpdateManager;
 public class ActionControll {
 	// Array que ira armazenar os objetos criados durante a sessao
 	private static ArrayList<Individuo> individuos = new ArrayList<>();
+	private static Integer idCounter = 1;
 
 	/**
 	 * metodo que cria um objeto Individuo(Pessoa/Aluno) e o armazena na Array
@@ -42,6 +43,7 @@ public class ActionControll {
 				ind = new Aluno(name, phone, birthdate, finalGrade);
 				individuos.add(ind);
 			}
+			ind.setId(idCounter++);
 			Gui.showTxt(ind.toString());
 		} catch (Exception e) {
 			Gui.showTxt("Não foi possivel concluir a inclusão" + "\nErro: " + e.toString());
@@ -50,17 +52,15 @@ public class ActionControll {
 	}
 
 	/**
-	 * Metodo que retorna um individuo pesquisado pelo nome
+	 * Metodo que retorna um individuo pesquisado pelo ID
 	 * 
-	 * @param nome
+	 * @param Integer id
 	 * @return Individuo
 	 */
-	private static Individuo getIndByName(String search) {
+	private static Individuo getIndById(Integer id) {
 		Individuo ind = null;
-		for (Individuo obj : individuos) {
-			if (obj.getName().equalsIgnoreCase(search)) {
-				ind = obj;
-			}
+		for (Individuo obj: individuos) {
+			if (obj.getId() == id) ind = obj;
 		}
 		return ind;
 	}
@@ -71,12 +71,13 @@ public class ActionControll {
 		int op = 0;
 		int prop =0;
 		
-		String target = Gui.getTxt("Insira o nome completo do Registro: ");
+		int id = Gui.getInt("Insira o ID do Registro");
 		try {
-			ind = getIndByName(target);
+			ind = getIndById(id);
 			Gui.showTxt(ind.toString());
 		}catch(Exception e) {
 			Gui.showTxt("Registro não encontrado");
+			System.out.println(e.toString());
 		}
 		if(ind != null) {
 			op = Menu.menuEdit();
@@ -104,7 +105,7 @@ public class ActionControll {
 		if(individuos.size() > 0) {
 			try {
 				Collections.sort(individuos);
-				return individuos.toString().replace(",", "");			
+				return individuos.toString().replace(",", "\n");			
 			}catch(Exception e) {
 				return "Nenhum Registro Encontrado";
 			}
@@ -112,6 +113,7 @@ public class ActionControll {
 			return "O Cadastro Está Vazio";
 		}
 	}
+	
 
 	/**
 	 * Metodo que lista todos Alunos dastrados

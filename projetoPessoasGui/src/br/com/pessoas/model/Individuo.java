@@ -11,6 +11,7 @@ import java.util.Date;
 public abstract class Individuo implements Comparable<Individuo> {
 
 	// definicao das propriedades da classe
+	private Integer id = null;
 	private String name;
 	private String phone;
 	private Date birthdate;
@@ -80,6 +81,15 @@ public abstract class Individuo implements Comparable<Individuo> {
 		this.finalGrade = finalGrade;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
 	/**
 	 * Sobrescricao do metodo "compareTo" para permitir que os objetos armazenados
 	 * sejam classificados em ordem alfabetica tendo os nomes como parametro de
@@ -87,25 +97,6 @@ public abstract class Individuo implements Comparable<Individuo> {
 	 */
 	@Override
 	public int compareTo(Individuo ind) {
-		int check = 0;
-		if (this.name.length() > ind.getName().length()) {
-
-			for (int i = 0; i < ind.getName().length(); i++) {
-				check = this.name.charAt(i) > ind.getName().charAt(i) ? 1
-						: this.name.charAt(i) < ind.getName().charAt(i) ? -1 : 0;
-				if (check != 0)
-					return check;
-			}
-
-		} else {
-			for (int i = 0; i < this.name.length(); i++) {
-				check = this.name.charAt(i) > ind.getName().charAt(i) ? 1
-						: this.name.charAt(i) < ind.getName().charAt(i) ? -1 : 0;
-				if (check != 0)
-					return check;
-			}
-
-		}
-		return check;
+		return this.name.compareTo(ind.getName());		
 	}
 }

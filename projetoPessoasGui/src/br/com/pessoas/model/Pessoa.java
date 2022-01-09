@@ -30,7 +30,8 @@ public class Pessoa extends Individuo {
 	 */
 	@Override
 	public String toString() {
-		return "\nPessoa \nNome: " + getName() + " \nTelefone: " + getPhone() + " \nData de nascimento: " 
+		return "\nPessoa ID: "+ this.getId() + " \nNome: " + getName() + " \nTelefone: " 
+				+ getPhone() + " \nData de nascimento: " 
 				+ DateManager.printDate(getBirthdate()) + " \nData de cadastro: " 
 				+ DateManager.printDateTime(getRegisterDate())
 				+ " \nÚltima atualização: " + DateManager.printDateTime(getLastUpdate())
