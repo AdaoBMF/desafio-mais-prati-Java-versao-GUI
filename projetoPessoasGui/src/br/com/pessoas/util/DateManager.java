@@ -13,6 +13,8 @@ import br.com.pessoas.UiControll.Gui;
  */
 public class DateManager {
 	
+	private static String warning = "Aviso! \nEntrada Inválida: ";
+	
 	//obj usados para auxuliar a formatacao das datas nos metodos
 	private static DateFormat dayF = new SimpleDateFormat("dd/MM/yyyy");
 	private static DateFormat dayTime = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -34,7 +36,7 @@ public class DateManager {
 		Boolean first = true;
 		while (day == 0) {
 			if (!first) {
-				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite apenas números de 1 a 31");
+				Gui.showTxt(warning + "\nDigite apenas números de 1 a 31");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o dia do mês ");
@@ -58,7 +60,7 @@ public class DateManager {
 		Boolean first = true;
 		while (month == 0) {
 			if (!first) {
-				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite apenas números de 1 a 12");
+				Gui.showTxt(warning + "\nDigite apenas números de 1 a 12");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o nº do mês ");
@@ -82,7 +84,7 @@ public class DateManager {
 		Boolean first = true;
 		while (year == 0) {
 			if (!first) {
-				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite um ano válido ");
+				Gui.showTxt(warning + "\nDigite um ano válido ");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o ano ");
@@ -112,7 +114,7 @@ public class DateManager {
 				str = String.format("%s/%s/%s", day, month, year);
 				check = false;
 			}else {
-				Gui.showTxt("Aviso! \nData Inválida \n");
+				Gui.showTxt("Aviso! \nData Inválida (" + day + "/" + month+ "/" + year +")");
 			}
 		}
 		try {

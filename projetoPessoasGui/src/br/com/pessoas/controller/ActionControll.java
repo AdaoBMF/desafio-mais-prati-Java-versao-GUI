@@ -29,8 +29,8 @@ public class ActionControll {
 	 */
 	private static void register() {
 		Individuo ind = null;
-		String name = Gui.getTxt("Nome: ");
-		String phone = Gui.getTxt("Telefone: ");
+		String name = Gui.getAlpha("Nome: ");
+		String phone = Gui.getPhone("Telefone: ");
 		Gui.showTxt("Data de nascimento: (dd/mm/aaaa) ");
 		Date birthdate = DateManager.inputDate();
 		Double finalGrade = Menu.gradeCheck() ? GradeManager.getGrade() : null;

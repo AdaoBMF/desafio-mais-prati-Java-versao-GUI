@@ -2,6 +2,8 @@ package br.com.pessoas.UiControll;
 
 import javax.swing.JOptionPane;
 
+import br.com.pessoas.util.EntryCheck;
+
 /**
  * Classe responsavel por controlar a interface grafica
  * 
@@ -9,8 +11,11 @@ import javax.swing.JOptionPane;
  *
  */
 public class Gui {
+	
+	private static String warning = "Aviso! \nInsira uma Entrada Válida: ";
+	
 	/**
-	 * metodo que exibe uma janela de dialogo para coletar uma entrada(String) do usuario
+	 * Metodo que exibe uma janela de dialogo para coletar uma entrada(String) do usuario
 	 * 
 	 * @param msg
 	 * @return String 
@@ -19,7 +24,7 @@ public class Gui {
 		boolean start = true;
 		String entry = "";
 		while(true) {
-			if(start !=true) Gui.showTxt("Insira um Valor Válido"); 
+			if(start !=true) Gui.showTxt(warning); 
 			entry = JOptionPane.showInputDialog(msg).trim();
 			if(!entry.equals("")) {
 				return entry;
@@ -28,9 +33,52 @@ public class Gui {
 		}
 	
 	}
+	
+	/**
+	 * Metodo que exibe uma janela de dialogo para coletar 
+	 * e validar uma String alfabetica 
+	 * 
+	 * @param msg
+	 * @return
+	 */
+	public static String getAlpha(String msg) {
+		Boolean first = true;
+		String entry = "";
+		while(true) {
+			if(!first) {
+				Gui.showTxt(warning + "(apenas letras)");
+			}
+			entry = Gui.getTxt(msg);
+			if(EntryCheck.alphaCheck(entry)) {
+				return entry;
+			}
+			first = false;
+		}
+	}
+	
+	/**
+	 * Metodo que exibe uma janela de dialogo para coletar 
+	 * e validar numero de telefone com 10 a 12 digitos
+	 * 
+	 * @return string numerica
+	 */
+	public static String getPhone(String msg) {
+		boolean first = true;
+		String entry = "";
+		while (true) {
+			if (!first) {
+				Gui.showTxt(warning + "(apenas números de 8 a 15 digitos)");
+			}
+			entry = Gui.getTxt(msg);
+			if (!entry.equals("") && EntryCheck.PhoneCheck(entry)) {
+				return entry;
+			}
+			first = false;
+		}
+	}	
 
 	/**
-	 * metodo que exibe uma janela de dialogo para coletar uma entrada(int) do usuario
+	 * Metodo que exibe uma janela de dialogo para coletar uma entrada(int) do usuario
 	 * 
 	 * @param msg
 	 * @return int 
@@ -40,7 +88,7 @@ public class Gui {
 	}
 	
 	/**
-	 * metodo que exibe uma janela de dialogo para coletar uma entrada(double) do usuario
+	 * Metodo que exibe uma janela de dialogo para coletar uma entrada(double) do usuario
 	 * 
 	 * @param msg
 	 * @return double 
@@ -50,7 +98,7 @@ public class Gui {
 	}
 	
 	/**
-	 * metodo que cria uma janela de dialogo para exibir um output destinado ao usuario
+	 * Metodo que cria uma janela de dialogo para exibir um output destinado ao usuario
 	 * 
 	 * @param txt
 	 */
