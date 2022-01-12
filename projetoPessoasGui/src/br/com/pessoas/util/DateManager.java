@@ -16,8 +16,6 @@ public class DateManager {
 	//obj usados para auxuliar a formatacao das datas nos metodos
 	private static DateFormat dayF = new SimpleDateFormat("dd/MM/yyyy");
 	private static DateFormat dayTime = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
-	
 	
 	public static String printDate(Date entry) {		
 		return dayF.format(entry);
@@ -31,21 +29,21 @@ public class DateManager {
 	 * 
 	 * @return String
 	 */
-	private static String inputDay() {
-		String day = "";
-		Boolean check = false;
-		while (day.length() == 0) {
-			if (check == true) {
-				Gui.showTxt("Aviso!\nEntrada inválida\nDigite apenas números de 1 a 31");
+	private static Integer inputDay() {
+		Integer day = 0;
+		Boolean first = true;
+		while (day == 0) {
+			if (!first) {
+				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite apenas números de 1 a 31");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o dia do mês ");
 				if (entry > 0 && entry <= 31) {
-					day = entry > 10 ? "0" + entry : day + entry;
+					day = entry;
 				}
 			} catch (Exception e) {}
 
-			check = true;
+			first = false;
 		}
 		return day;
 	}
@@ -55,20 +53,20 @@ public class DateManager {
 	 * 
 	 * @return String
 	 */
-	private static String inputMonth() {
-		String month = "";
-		Boolean check = false;
-		while (month.length() == 0) {
-			if (check == true) {
-				Gui.showTxt("Aviso!\nEntrada inválida\nDigite apenas números de 1 a 12");
+	private static Integer inputMonth() {
+		Integer month = 0;
+		Boolean first = true;
+		while (month == 0) {
+			if (!first) {
+				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite apenas números de 1 a 12");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o nº do mês ");
 				if (entry > 0 && entry <= 12) {
-					month = entry > 10 ? "0" + entry : month + entry;
+					month = entry;
 				}
 			} catch (Exception e) {}
-			check = true;
+			first = false;
 		}
 		return month;
 	}
@@ -78,21 +76,21 @@ public class DateManager {
 	 * 
 	 * @return String
 	 */
-	private static String inputYear() {
+	private static Integer inputYear() {
 		int validYear = Calendar.getInstance().get(Calendar.YEAR);
-		String year = "";
-		Boolean check = false;
-		while (year.length() == 0) {
-			if (check == true) {
-				Gui.showTxt("Aviso!\nEntrada inválida\nDigite apenas números ");
+		Integer year = 0;
+		Boolean first = true;
+		while (year == 0) {
+			if (!first) {
+				Gui.showTxt("Aviso!\nEntrada inválida\n \nDigite um ano válido ");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o ano ");
 				if (entry >= (validYear-100) && entry <= validYear) {
-					year += entry;
+					year = entry;
 				}
 			} catch (Exception e) {}
-			check = true;
+			first = false;
 		}
 		return year;
 	}
@@ -104,10 +102,19 @@ public class DateManager {
 	 */
 	public static Date inputDate() {
 		Date date = null;
-		String day = inputDay();
-		String month = inputMonth();
-		String year = inputYear();
-		String str = String.format("%s/%s/%s", day, month, year);
+		String str = "";
+		Boolean check = true;
+		while(check) {
+			Integer day = inputDay();
+			Integer month = inputMonth();
+			Integer year = inputYear();
+			if(EntryCheck.dateCheck(day, month, year)) {
+				str = String.format("%s/%s/%s", day, month, year);
+				check = false;
+			}else {
+				Gui.showTxt("Aviso! \nData Inválida \n");
+			}
+		}
 		try {
 			date = dayF.parse(str);
 		} catch (ParseException e) {
