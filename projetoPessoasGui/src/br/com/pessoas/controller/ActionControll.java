@@ -3,6 +3,7 @@ package br.com.pessoas.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 import br.com.pessoas.UiControll.Gui;
 import br.com.pessoas.model.Aluno;
@@ -70,8 +71,8 @@ public class ActionControll {
 		Individuo ind = null;
 		int op = 0;
 		int prop =0;
-		
-		int id = Gui.getInt("Insira o ID do Registro");
+		String target = Gui.getTxt("Insira o ID do Registro");
+		int id = Pattern.matches("[0-9]", target) ? Integer.parseInt(target) : 0;
 		try {
 			ind = getIndById(id);
 			Gui.showTxt(ind.toString());
