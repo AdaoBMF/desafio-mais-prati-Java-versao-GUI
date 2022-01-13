@@ -10,4 +10,4 @@ recebendo os comandos do usuário e retornando o feedback via janelas de diálog
 
 
 * <a href="https://github.com/AdaoBMF/desafio-mais-prati-Java-versao-GUI/blob/main/projetoPessoasGui/projetoAvaliacao.md">Descrição do funcionamento aqui</a>
-* <a href ="https://github.com/AdaoBMF/desafio-mais-prati-Java-versao-GUI/blob/main/cadastroFoobar.jar">Baixe o executável(arivo .jar) para testar 🟢</a>
+* <a href ="https://github.com/AdaoBMF/desafio-mais-prati-Java-versao-GUI/raw/main/cadastroFoobar.jar">Baixe o executável(arivo .jar) para testar 🟢</a>
