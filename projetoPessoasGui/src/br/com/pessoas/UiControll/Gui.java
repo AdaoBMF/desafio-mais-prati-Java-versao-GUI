@@ -12,7 +12,7 @@ import br.com.pessoas.util.EntryCheck;
  */
 public class Gui {
 	
-	private static String warning = "Aviso! \nInsira uma Entrada Válida: ";
+	private static String warning = "Aviso! \nInsira uma Entrada VÃ¡lida: ";
 	
 	/**
 	 * Metodo que exibe uma janela de dialogo para coletar uma entrada(String) do usuario
@@ -67,7 +67,7 @@ public class Gui {
 		String entry = "";
 		while (true) {
 			if (!first) {
-				Gui.showTxt(warning + "(apenas números de 8 a 15 digitos)");
+				Gui.showTxt(warning + "(apenas nÃºmeros de 8 a 15 digitos)");
 			}
 			entry = Gui.getTxt(msg);
 			if (!entry.equals("") && EntryCheck.PhoneCheck(entry)) {

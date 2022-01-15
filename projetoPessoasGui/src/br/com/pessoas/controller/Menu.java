@@ -12,7 +12,7 @@ import br.com.pessoas.model.Individuo;
  */
 public class Menu {
 	
-	private static String warning = "Aviso!\nOpção Inválida \nDigite apenas o número da Operação desejada";
+	private static String warning = "Aviso!\nOpÃ§Ã£o InvÃ¡lida \nDigite apenas o nÃºmero da OperaÃ§Ã£o desejada";
 	
 	/**
 	 * Metodo que executa a interface principalde interacao do usuario com as funcoes CRUD 
@@ -24,12 +24,12 @@ public class Menu {
 		while(op == 0) {
 			try {
 				int entry = Gui.getInt(
-						"\nEscolha a Operação desejada\n"
+						"\nEscolha a OperaÃ§Ã£o desejada\n"
 							+ "\n  [1] Adicionar Novo Registro "
 							+ "[2] Listar(Todos/Pessoas/Alunos) "
 							+ "[3] Buscar (Editar/Excluir) "
 							+ "[4] Sair \n"
-							+ "\nOperação: "
+							+ "\nOperaÃ§Ã£o: "
 							);
 				if(entry >= 1 && entry <= 4) {
 					if(entry == 2) {
@@ -63,7 +63,7 @@ public class Menu {
 								+"[2] Pessoas "
 								+"[3] Alunos "
 								+"[4] Voltar "
-								+"\nOpção: "
+								+"\nOpÃ§Ã£o: "
 						);
 				if(entry >=1 && entry <= 4) {
 					op = entry == 1 ? 5 : entry == 2 ? 6 : entry == 3 ? 7 : 8 ;
@@ -87,11 +87,11 @@ public class Menu {
 		while(op == 0 ) {
 			try {
 				int entry = Gui.getInt(
-						"Opções: "
+						"OpÃ§Ãµes: "
 						+" [1] Editar(Nome/Telefone/Data de Nascimento/Nota Final) "
-						+"[2] Excluír "
+						+"[2] ExcluÃ­r "
 						+"[3] Voltar "
-						+"\nOpção: "
+						+"\nOpÃ§Ã£o: "
 						);
 				if(entry >= 1 && entry <= 3) {
 					op = entry; 
@@ -116,13 +116,13 @@ public class Menu {
 		while(op == 0) {
 			try {
 				int entry = Gui.getInt(
-					"Opções: "
+					"OpÃ§Ãµes: "
 					+" [1] Editar Nome "
 					+" [2] Editar Telefone "
 					+" [3] Editar Data de Nascimento "
 					+" [4] Editar Nota Final "
 					+" [5] Sair "
-					+"\nOpção: "						
+					+"\nOpÃ§Ã£o: "						
 						);
 				if(entry >= 1 && entry <= 5) {
 					op = entry;
@@ -146,13 +146,13 @@ public class Menu {
 		String check = "first";
 		while(!check.equalsIgnoreCase("S") && !check.equalsIgnoreCase("N")){
 			
-			//se não for a primeira execucao mostra um warning
+			//se nï¿½o for a primeira execucao mostra um warning
 			if(!check.equals("first")) Gui.showTxt("Aviso!\nDigite apenas S ou N ");
 			check = Gui.getTxt("Inserir nota? S/N ");			
 		}
 		if(check.equalsIgnoreCase("S")) {
 			return true;
-		}else {				
+		}else {
 			return false;
 		}
 	}
@@ -168,13 +168,13 @@ public class Menu {
 		String check = "first";
 		while(!check.equalsIgnoreCase("S") && !check.equalsIgnoreCase("N")){
 			
-			//se não for a primeira execucao mostra um warning
+			//se nï¿½o for a primeira execucao mostra um warning
 			if(!check.equals("first")) Gui.showTxt("Aviso!\nDigite apenas S ou N ");
 			
 			check = Gui.getTxt(
 					"Aviso!"
-					+"\nAo sair da sessão, todos os dados serão perdidos"
-					+ "\nDeseja finalizar a sessão? S/N "
+					+"\nAo sair da sessÃ£o, todos os dados serÃ£o perdidos"
+					+ "\nDeseja finalizar a sessÃ£o? S/N "
 					);
 		}
 		if(check.equalsIgnoreCase("S")) {
@@ -189,13 +189,13 @@ public class Menu {
 		String check = "first";
 		while(!check.equalsIgnoreCase("S") && !check.equalsIgnoreCase("N")){
 			
-			//se não for a primeira execucao mostra um warning
+			//se nï¿½o for a primeira execucao mostra um warning
 			if(!check.equals("first")) Gui.showTxt("Aviso!\nDigite apenas S ou N ");
 			
 			check = Gui.getTxt(
 					"Aviso!"
-					+"O Registro " + ind.getName() + " Será Excluído"
-					+ "\nDeseja Confirmar a Exclusão? S/N "
+					+"O Registro " + ind.getName() + " SerÃ¡ ExcluÃ­do permanentemente"
+					+ "\nDeseja Confirmar a ExclusÃ£o? S/N "
 					);
 		}
 		if(check.equalsIgnoreCase("S")) {

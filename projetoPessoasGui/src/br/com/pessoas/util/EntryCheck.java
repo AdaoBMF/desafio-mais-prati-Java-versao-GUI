@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class EntryCheck {
 
 	public static Boolean alphaCheck(String str) {
-		Pattern p = Pattern.compile("[!@#$%&*()_+=|<>?{}\\\\[\\\\]-,.;:0-9]");
+		Pattern p = Pattern.compile("[~^´`\"!@#$%&*()_+=|<>?{}\\\\[\\\\]-,.;:0-9]");
 		Matcher m = p.matcher(str);
 		return !m.find();
 	}

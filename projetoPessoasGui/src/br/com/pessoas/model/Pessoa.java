@@ -19,7 +19,7 @@ public class Pessoa extends Individuo {
 	 * @param birthdate
 	 */
 	public Pessoa(String name, String phone, Date birthdate) {
-		//chama o construtor padrao da classe pai(no caso desta classe é o suficiente)
+		//chama o construtor padrao da classe pai(no caso desta classe Ã© o suficiente)
 		super(name, phone, birthdate);		
 		
 	}
@@ -34,7 +34,7 @@ public class Pessoa extends Individuo {
 				+ getPhone() + " \nData de nascimento: " 
 				+ DateManager.printDate(getBirthdate()) + " \nData de cadastro: " 
 				+ DateManager.printDateTime(getRegisterDate())
-				+ " \nÚltima atualização: " + DateManager.printDateTime(getLastUpdate())
+				+ " \nÃšltima atualizaÃ§Ã£o: " + DateManager.printDateTime(getLastUpdate())
 				+"\n------------------------------------------------------------\n";
 	}
 	

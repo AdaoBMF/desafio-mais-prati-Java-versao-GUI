@@ -13,7 +13,7 @@ import br.com.pessoas.UiControll.Gui;
  */
 public class DateManager {
 	
-	private static String warning = "Aviso! \nEntrada Inválida: ";
+	private static String warning = "Aviso! \nEntrada InvÃ¡lida: ";
 	
 	//obj usados para auxuliar a formatacao das datas nos metodos
 	private static DateFormat dayF = new SimpleDateFormat("dd/MM/yyyy");
@@ -36,10 +36,10 @@ public class DateManager {
 		Boolean first = true;
 		while (day == 0) {
 			if (!first) {
-				Gui.showTxt(warning + "\nDigite apenas números de 1 a 31");
+				Gui.showTxt(warning + "\nDigite apenas nÃºmeros de 1 a 31");
 			}
 			try {
-				Integer entry = Gui.getInt("Digite o dia do mês ");
+				Integer entry = Gui.getInt("Digite o dia do mÃªs ");
 				if (entry > 0 && entry <= 31) {
 					day = entry;
 				}
@@ -60,10 +60,10 @@ public class DateManager {
 		Boolean first = true;
 		while (month == 0) {
 			if (!first) {
-				Gui.showTxt(warning + "\nDigite apenas números de 1 a 12");
+				Gui.showTxt(warning + "\nDigite apenas nÃºmeros de 1 a 12");
 			}
 			try {
-				Integer entry = Gui.getInt("Digite o nº do mês ");
+				Integer entry = Gui.getInt("Digite o nÃºmero do mÃªs ");
 				if (entry > 0 && entry <= 12) {
 					month = entry;
 				}
@@ -84,7 +84,7 @@ public class DateManager {
 		Boolean first = true;
 		while (year == 0) {
 			if (!first) {
-				Gui.showTxt(warning + "\nDigite um ano válido ");
+				Gui.showTxt(warning + "\nDigite um ano vÃ¡lido ");
 			}
 			try {
 				Integer entry = Gui.getInt("Digite o ano ");
@@ -114,13 +114,13 @@ public class DateManager {
 				str = String.format("%s/%s/%s", day, month, year);
 				check = false;
 			}else {
-				Gui.showTxt("Aviso! \nData Inválida (" + day + "/" + month+ "/" + year +")");
+				Gui.showTxt("Aviso! \nData InvÃ¡lida (" + day + "/" + month+ "/" + year +")");
 			}
 		}
 		try {
 			date = dayF.parse(str);
 		} catch (ParseException e) {
-			Gui.showTxt("Não foi possivel armazenar a data");
+			Gui.showTxt("NÃ£o foi possÃ­vel armazenar a data");
 			Gui.showTxt(e.toString());
 		}
 		return date;

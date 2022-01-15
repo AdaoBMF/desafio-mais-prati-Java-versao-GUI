@@ -47,7 +47,7 @@ public class ActionControll {
 			ind.setId(idCounter++);
 			Gui.showTxt(ind.toString());
 		} catch (Exception e) {
-			Gui.showTxt("N„o foi possivel concluir a inclus„o" + "\nErro: " + e.toString());
+			Gui.showTxt("N√£o foi poss√≠vel concluir a inclus√£o" + "\nErro: " + e.toString());
 		}
 
 	}
@@ -77,7 +77,7 @@ public class ActionControll {
 			ind = getIndById(id);
 			Gui.showTxt(ind.toString());
 		}catch(Exception e) {
-			Gui.showTxt("Registro n„o encontrado");
+			Gui.showTxt("Registro n√£o encontrado");
 			System.out.println(e.toString());
 		}
 		if(ind != null) {
@@ -111,7 +111,7 @@ public class ActionControll {
 				return "Nenhum Registro Encontrado";
 			}
 		}else {
-			return "O Cadastro Est· Vazio";
+			return "O Cadastro Est√° Vazio";
 		}
 	}
 	
@@ -215,7 +215,7 @@ public class ActionControll {
 			individuos.remove(target);
 			Gui.showTxt(name +" removido com sucesso.");		
 		}else {
-			Gui.showTxt("Exclus„o Cancelada");
+			Gui.showTxt("Exclus√£o Cancelada");
 		}
 	}
 	
@@ -257,7 +257,7 @@ public class ActionControll {
 			}
 		}
 		Gui.showTxt(
-				"Fim da Sess„o"
+				"Fim da Sess√£o (‚åê‚ñ†_‚ñ†)"
 				);
 	}
 }

@@ -23,8 +23,8 @@ public class GradeManager {
 			}catch (Exception e) {
 				grade = null;
 				Gui.showTxt("Aviso!"
-						+" \nEntrada invalida. "
-						+"\nDigite apenas valores num�ricos");
+						+" \nEntrada inválida. "
+						+"\nDigite apenas valores numéricos");
 			}
 		}
 		return grade;
