@@ -1,6 +1,6 @@
 package br.com.pessoas.util;
 
-import br.com.pessoas.UiControll.*;
+import br.com.pessoas.UiControl.*;
 
 /**
  * Classe auxiliar para validacao e captacao do valor da nota

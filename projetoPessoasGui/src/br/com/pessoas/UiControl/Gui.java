@@ -1,6 +1,8 @@
-package br.com.pessoas.UiControll;
+package br.com.pessoas.UiControl;
 
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import br.com.pessoas.util.EntryCheck;
 
@@ -13,7 +15,8 @@ import br.com.pessoas.util.EntryCheck;
 public class Gui {
 	
 	private static String warning = "Aviso! \nInsira uma Entrada Válida: ";
-	
+	private static JTextArea ta = new JTextArea(20,30);
+		
 	/**
 	 * Metodo que exibe uma janela de dialogo para coletar uma entrada(String) do usuario
 	 * 
@@ -104,6 +107,17 @@ public class Gui {
 	 */
 	public static void showTxt(String txt){
 		JOptionPane.showMessageDialog(null, txt);
+	}
+	/**
+	 * Metodo que cria uma janela de dialogo para exibir um output destinado ao usuario
+	 * 
+	 * @param txt
+	 */
+	public static void showList(String txt){
+		ta.setText(txt);
+		ta.setCaretPosition(0);
+		ta.setEditable(false);
+		JOptionPane.showMessageDialog(null, new JScrollPane(ta));
 	}
 
 }

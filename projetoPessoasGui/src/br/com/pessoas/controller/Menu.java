@@ -1,6 +1,6 @@
 package br.com.pessoas.controller;
 
-import br.com.pessoas.UiControll.Gui;
+import br.com.pessoas.UiControl.Gui;
 import br.com.pessoas.model.Individuo;
 
 /**

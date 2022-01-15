@@ -3,7 +3,7 @@ package br.com.pessoas.util;
 import java.text.*;
 import java.util.*;
 
-import br.com.pessoas.UiControll.Gui;
+import br.com.pessoas.UiControl.Gui;
 
 /**
  * Classe auxiliar para gerenciar datas

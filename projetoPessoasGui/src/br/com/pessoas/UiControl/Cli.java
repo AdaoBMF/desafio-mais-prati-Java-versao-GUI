@@ -1,4 +1,4 @@
-package br.com.pessoas.UiControll;
+package br.com.pessoas.UiControl;
 
 import java.util.Scanner;
 

@@ -2,7 +2,7 @@ package br.com.pessoas.util;
 
 import java.util.Date;
 
-import br.com.pessoas.UiControll.Gui;
+import br.com.pessoas.UiControl.Gui;
 import br.com.pessoas.model.Individuo;
 
 public class UpdateManager {

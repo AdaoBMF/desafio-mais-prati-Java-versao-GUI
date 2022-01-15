@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-import br.com.pessoas.UiControll.Gui;
+import br.com.pessoas.UiControl.Gui;
 import br.com.pessoas.model.Aluno;
 import br.com.pessoas.model.Individuo;
 import br.com.pessoas.model.Pessoa;
@@ -23,7 +23,7 @@ public class ActionControll {
 	// Array que ira armazenar os objetos criados durante a sessao
 	private static ArrayList<Individuo> individuos = new ArrayList<>();
 	private static Integer idCounter = 1;
-
+	
 	/**
 	 * metodo que cria um objeto Individuo(Pessoa/Aluno) e o armazena na Array
 	 * individuos
@@ -244,13 +244,13 @@ public class ActionControll {
 					session = Menu.sessionAlert();
 					break;
 				case 5:
-					Gui.showTxt(listIndividuos());
+					Gui.showList(listIndividuos());
 					break;
 				case 6:
-					Gui.showTxt(listPessoas());
+					Gui.showList(listPessoas());
 					break;
 				case 7:
-					Gui.showTxt(listAlunos());
+					Gui.showList(listAlunos());
 					break;
 				case 8:
 					continue;
